@@ -31,8 +31,7 @@ const Groupsession = () => {
 
     async function handleToken(token, addresses) {
         const response = await axios.post(
-            "https://keshavsharma-backend.web.app/xxuigjye",
-            { token, product, contact }
+            "https://keshavsharma-backend.web.app/xxujye"
         );
         const { status } = response.data;
         if (status === "success") {
@@ -128,13 +127,11 @@ const Groupsession = () => {
                                 </CardBody>
                                 <CardFooter>
                                     <StripeCheckout
-                                        stripeKey="pk_test_YmIYdd4THU1ZqwMPMKnuqTmx00r0XUG0e1"
+                                        stripeKey=""
                                         token={handleToken}
                                         amount={product.price * 100}
                                         contact={contact}
                                         name="Aum Keshav Sharma | Group Session"
-                                        billingAddress
-                                        // shippingAddress
                                     />
                                 </CardFooter>
                             </Form>

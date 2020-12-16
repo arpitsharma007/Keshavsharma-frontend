@@ -32,9 +32,9 @@ const Oneonone = () => {
 
     async function handleToken(token, addresses) {
         const response = await axios.post(
-            "https://keshavsharma-backend.web.app/xxuigjye",
-            { token, product, contact }
+            "https://keshavsharma-backend.web.app/xxujye"
         );
+
         const { status } = response.data;
         if (status === "success") {
             toast("Success! Check email for details", { type: "success" });
@@ -71,7 +71,6 @@ const Oneonone = () => {
                 <br />
                 <b>Disclaimer:</b>
                 <span> Please note that these guidances are based out of experience. We do not claim this to be medical and/or a replacement of any medical procedures for any physical or mental conditions. For any advice, you are welcome to take a second opinion from your medical practitioner.</span>
-                <span>By making payment you are agreeing to our</span><NavLink tag={Link} to="/terms" className="text-black" target="_blank">terms and conditions</NavLink> 
 
             </Container>    
             <Container className='text-center'>
@@ -126,28 +125,14 @@ const Oneonone = () => {
                                             />
                                         </Col>
                                     </FormGroup>
-                                    <FormGroup row>
-                                        <Label for='Phone No.' sm={3}>
-                                            Session Time
-                                        </Label>
-                                        <Col sm={1}>
-                                            <select> 
-                                                <option name="45">One on One 15mins - $45</option>
-                                                <option name="75">One on One 30mins - $75</option>
-                                                <option name="140">One on One 1 hour - $140</option>
-                                            </select>
-                                        </Col>
-                                    </FormGroup>
                                 </CardBody>
                                 <CardFooter>
                                     <StripeCheckout
-                                        stripeKey="pk_test_YmIYdd4THU1ZqwMPMKnuqTmx00r0XUG0e1"
+                                        stripeKey=""
                                         token={handleToken}
                                         amount={product.price * 100}
                                         contact={contact}
                                         name="Aum Keshav Sharma | One on One Session"
-                                        billingAddress
-                                        // shippingAddress
                                     />
                                 </CardFooter>
                             </Form>
